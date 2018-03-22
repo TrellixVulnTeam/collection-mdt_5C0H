@@ -1,0 +1,142 @@
+@charset 'utf-8';
+/// Typo Guide ///
+
+// Thin
+@font-face {
+  font-family: "IropkeBatangM";
+  font-weight: 300;
+  src: local("☺"),
+       url(/assets/fonts/IropkeBatangM_web/IropkeBatangM.eot), /* IE9 Compat Modes */
+       url(/assets/fonts/IropkeBatangM_web/IropkeBatangM.eot?#iefix) format("embedded-opentype"), /* IE6-8 */
+       url(/assets/fonts/IropkeBatangM_web/IropkeBatangM.woff) format("woff"), /* Mordern Browsers */
+       url(/assets/fonts/IropkeBatangM_web/IropkeBatangM.ttf) format("truetype"); /* If not support woff */
+}
+
+
+
+
+
+
+/* typo */
+$size-xxs: 0.6rem;
+$size-xs: 0.7rem; 
+$size-0: 0.8125rem !default;        // 13
+$size-1: 1rem !default;             // 16
+$size-2: 1.3125rem !default;        // 21
+$size-3: 1.5rem !default;           // 24
+$size-4: 2.125rem !default;         // 34
+$size-5: 2.8125rem !default;        // 45
+$size-6: 3.5rem !default;           // 56
+$size-7: 7rem !default;             // 112
+
+$weight-light: 300 !default;
+$weight-normal: 400 !default;
+$weight-medium: 500 !default;
+$weight-semibold: 600 !default;
+$weight-bold: 700 !default;
+
+.mat-display-4 { font-size: $size-7; }    // 112 sp
+.mat-display-3 { font-size: $size-6; }    // 56  sp
+.mat-display-2 { font-size: $size-5; }    // 45  sp
+.mat-display-1 { font-size: $size-4; }    // 34  sp
+
+.mat-headline  { font-size: $size-3; }    // 24  sp
+.mat-title     { font-size: $size-2; }    // 21  sp
+.mat-subhead   { font-size: $size-1; }    // 16  sp (desktop) m은 pc에서 +1
+.mat-body-2    { font-size: $size-1; }    // 14  sp 
+.mat-body-1    { font-size: $size-1; }    // 14  sp
+.mat-caption   { font-size: $size-0; }    // 13  sp
+.mat-button    { font-size: $size-0; }    // 15  sp
+ 
+
+
+// .mat-display-4 { }
+// .mat-display-3 { }
+.mat-display-2 { line-height: 3rem; }       // 45  sp
+.mat-display-1 { line-height: 2.5rem; }     // 40  sp
+
+.mat-headline  { line-height: 2rem; } 
+// .mat-title     { }
+.mat-subhead-2   { line-height: 1.75rem; }  
+.mat-subhead-1   { line-height: 1.75rem; }  
+
+.mat-body-2    { line-height: 1.75rem; }    
+.mat-body-1    { line-height: 1.75rem; } 
+// .mat-caption   { }
+// .mat-button    { }
+
+
+
+
+////  font-family
+
+// $default-sans: 'Spoqa Han Sans', Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, "돋움", Dotum, Verdana, Arial, sans-serif;
+$default-sans: 'Spoqa Han Sans', 'Roboto', Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, "돋움", Dotum, Verdana, Arial, sans-serif;
+$default-serif: 'IropkeBatangM', serif;
+$default-mobile: Arial, sans-serif;
+
+$sans-number: 'Spoca Han Sans', sans-serif;
+$default-logo:  'Roboto', sans-serif;
+
+
+
+
+
+//// use
+
+
+html {
+  // mobile only
+  font-family: $default-mobile;
+  font-size: $html-font-size-mobile;
+
+  // from tablet to widescreen
+  @media(min-width: $tablet){ 
+      font-family: $default-sans;
+      font-size: $html-font-size;
+  }
+}
+
+
+blockquote {
+  @include size($wrap-width-3, auto);
+  font-size: $size-0;
+  font-family: $default-serif;
+  margin: 2rem 0;
+  background-color: hsl(0, 0%, 86%);
+  // @include border-radius(1rem);
+  padding: 1rem 2rem;
+}
+
+
+ul,ol {
+  font-family: $default-sans;
+  font-size: $size-0;
+  margin: 1rem auto;
+}
+
+
+ul {
+  list-style: circle;
+  list-style-position: inside;
+}
+
+ol {
+  list-style: decimal;
+  list-style-position: inside;
+}
+
+
+hr {
+  margin: 1rem 0;
+}
+
+
+
+
+//// material line-height custom setting
+
+
+// 이 부분이 있어야만  i.mat-icon이 동작한다. 위에서 덮어쓰기가 된듯.
+.mat-icon{ font-family: 'Material Icons' !important; }
+

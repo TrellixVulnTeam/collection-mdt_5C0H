@@ -1,0 +1,112 @@
+
+
+<div class="example-container mat-elevation-z8">
+  <div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)"
+      color="accent"      placeholder="Filter">
+    </mat-form-field>
+  </div>
+
+  <!-- <button mat-raised-button class="btn_add" color="accent" (click)="addOne()">새로운 상품 추가하기</button> -->
+
+  <mat-table #table 
+             [dataSource]="dataSource" 
+             matSort 
+             [trackBy]="trackByUid" 
+             class="animate">
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="wide"> 제품명 </mat-header-cell>
+      <mat-cell *matCellDef="let cup" class="wide"> 
+        {{ cup.name }} 
+        <mat-icon  (click)="openDialog(cup)">edit</mat-icon>
+      </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="size">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="narrow"> 사이즈 </mat-header-cell>
+      <mat-cell *matCellDef="let cup" class="narrow"> {{ cup.size }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="narrow"> 가격 </mat-header-cell>
+        <mat-cell *matCellDef="let cup" class="narrow"> {{ cup.price }} </mat-cell>
+      </ng-container>
+  
+
+
+    <ng-container matColumnDef="country">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="narrow"> 제조국 </mat-header-cell>
+      <mat-cell *matCellDef="let cup" class="narrow"> {{ cup.country }} </mat-cell>
+    </ng-container>
+
+<!--
+    <ng-container matColumnDef="material">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> 소재 </mat-header-cell>
+      <mat-cell *matCellDef="let cup"> {{ cup.material }} </mat-cell>
+    </ng-container>
+  -->
+
+    <ng-container matColumnDef="externalDiameter">
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="narrow">직경</mat-header-cell>
+        <mat-cell *matCellDef="let cup" class="narrow" > {{ cup.externalDiameter }} </mat-cell>
+      </ng-container>
+
+
+
+    <ng-container matColumnDef="totalLength">
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="narrow"> 총 길이 </mat-header-cell>
+        <mat-cell *matCellDef="let cup" class="narrow" > {{ cup.totalLength }} </mat-cell>
+    </ng-container>
+<!--
+    <ng-container matColumnDef="bodyLength">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 컵 길이 </mat-header-cell>
+        <mat-cell *matCellDef="let cup"> {{ cup.bodyLength }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="stemLength">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 손잡이 길이 </mat-header-cell>
+        <mat-cell *matCellDef="let cup"> {{ cup.stemLength }} </mat-cell>
+    </ng-container>
+  -->
+    <ng-container matColumnDef="totalCapacity">
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="narrow"> 전체 용량 </mat-header-cell>
+        <mat-cell *matCellDef="let cup" class="narrow" > {{ cup.totalCapacity }} </mat-cell>
+    </ng-container>
+
+<!--
+    <ng-container matColumnDef="airholeCapacity">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 공기구멍까지의 용량 </mat-header-cell>
+        <mat-cell *matCellDef="let cup"> {{ cup.airholeCapacity }} </mat-cell>
+    </ng-container>
+  -->
+  <!--
+    <ng-container matColumnDef="stemType">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 손잡이 형태 </mat-header-cell>
+        <mat-cell *matCellDef="let cup"> {{ cup.stemType.name }} </mat-cell>
+    </ng-container>
+  -->
+<!--
+    <ng-container matColumnDef="officialSite">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>공식 홈페이지</mat-header-cell>
+        <mat-cell *matCellDef="let cup"> {{ cup.officialSite }} </mat-cell>
+    </ng-container>
+  -->
+
+    <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="narrow"> Edit </mat-header-cell>
+        <mat-cell *matCellDef="let cup" class="narrow"> 
+          <mat-icon  (click)="openDialog(cup)">edit</mat-icon>
+          <!-- <button mat-raised-button  
+          color="primary">
+          
+        </button>  -->
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" class="animate"></mat-row>
+  </mat-table>
+</div>

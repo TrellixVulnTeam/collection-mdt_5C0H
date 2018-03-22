@@ -1,0 +1,9 @@
+@import 'assets/scss/global';
+
+.wrap {
+  @include size(820px, auto);
+  margin: 1rem auto;
+  padding: 2rem;
+  
+
+}

@@ -1,0 +1,96 @@
+
+
+body {
+  margin: 0;
+  padding: 0;   
+}
+
+
+//// Content Area ////
+
+
+.content-container {
+  @include size($wrap-width-5, auto);
+  margin: 4rem auto;
+  
+  .work-title { 
+    font-weight: $weight-bold;
+    text-align: center; 
+    margin: 0 auto;
+  }
+
+  .content-title { 
+    font-size: $size-4;
+    font-weight: $weight-bold;
+    text-align: center; 
+    margin: 0 auto;
+  }
+
+
+  .info-box {
+    @include size($wrap-width-3, 36px);
+    margin: .5rem auto;
+
+    @include flex(flex, row nowrap);
+    justify-content: center;
+    align-items: center;
+
+    .face { 
+        @include size(20px, 20px); 
+        display: inline-block;
+        @include border-radius(50%); 
+        background-color: $grey-dark;
+    }
+    .name { margin: 0 1rem 0 .2rem; }
+    .tag { margin-left: .4rem; }
+    .time { margin-right: .4rem; }
+  }
+
+
+  .content-box {
+    @include size($wrap-width-3, auto);
+    margin: 6rem auto;
+
+    h1 { font-size: $size-3; margin: 5rem 0 4rem 0; font-weight: $weight-bold; }
+    h2 { font-size: $size-2; margin: 4rem 0 3rem 0; font-weight: $weight-bold; }
+    h3 { font-size: $size-1; margin: 4rem 0 2rem 0; font-weight: $weight-bold; }
+    h4 { font-size: $size-0; margin: 4rem 0 2rem 0; font-weight: $weight-bold; }
+
+
+
+    
+
+    .summary {
+        @include size(100%, 200px);
+        
+    }
+
+    .sub-title { 
+      font-size: $size-0;
+      font-weight: $weight-bold;
+      font-family: $default-logo;
+      margin-bottom: 1.8rem;
+    }
+    .body {
+      font-family: $default-serif;
+    }
+
+    img {
+      max-width: $wrap-width-5;
+    }
+
+
+  }
+}
+
+.elseblock-title {
+  @include size(100%, 30px);
+  
+}
+.elseblock-summary {
+  @include size(100%, 200px);
+}
+.elseblock-body {
+  @include size(100%, 200px);
+  
+}

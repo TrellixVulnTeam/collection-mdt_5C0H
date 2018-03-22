@@ -1,0 +1,18 @@
+
+
+/**
+ * Convert font-size from px to rem with px fallback
+ *
+ * @param $size - the value in pixel you want to convert
+ *
+ * e.g. p {@include fontSize(12px);}
+ * base-font-size가 작을 수록 적용되는 font-size는 커진다.
+ * 왜냐하면, 1rem은 기준 값을 의미하므로, @font-size(param)에서 param으로 넣은 인자의 값이 우리가 지정한 basefontsize와 같아야 1이 된다. 따라서, 우리가 지정한 base 크기보다 작을 경우, 1rem보다 작아지는 것이다. 결국 basefontsize를 20으로하고, @fontSize(16)으로하면 basefontsize를 16으로 했을 때보다 폰트사이즈는 작아지게 된다.
+ */
+
+// Function for converting a px based font-size to rem.
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  //Default font size on html element is 100%, equivalent to 16px;
+  @return #{$remSize}rem;
+}

@@ -1,0 +1,233 @@
+@charset "UTF-8";
+/**
+ * Applies styles for users in high contrast mode. Note that this only applies
+ * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`
+ * attribute, however Chrome handles high contrast differently.
+ */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+/**
+ * Convert font-size from px to rem with px fallback
+ *
+ * @param $size - the value in pixel you want to convert
+ *
+ * e.g. p {@include fontSize(12px);}
+ * base-font-size가 작을 수록 적용되는 font-size는 커진다.
+ * 왜냐하면, 1rem은 기준 값을 의미하므로, @font-size(param)에서 param으로 넣은 인자의 값이 우리가 지정한 basefontsize와 같아야 1이 된다. 따라서, 우리가 지정한 base 크기보다 작을 경우, 1rem보다 작아지는 것이다. 결국 basefontsize를 20으로하고, @fontSize(16)으로하면 basefontsize를 16으로 했을 때보다 폰트사이즈는 작아지게 된다.
+ */
+/*
+    Example usage: 
+    @include animation(10s, 5s, changecolour)
+ */
+/* sass nth-child-sass-mixins: https://paulund.co.uk/nth-child-sass-mixins
+*/
+/*
+li {
+  @include first(4) { background: red; }
+}
+*/
+/* layout */
+/* z-index */
+/* color */
+@font-face {
+  font-family: "IropkeBatangM";
+  font-weight: 300;
+  src: local("☺"), url(/assets/fonts/IropkeBatangM_web/IropkeBatangM.eot), url(/assets/fonts/IropkeBatangM_web/IropkeBatangM.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/IropkeBatangM_web/IropkeBatangM.woff) format("woff"), url(/assets/fonts/IropkeBatangM_web/IropkeBatangM.ttf) format("truetype");
+  /* If not support woff */ }
+/* typo */
+.mat-display-4 {
+  font-size: 7rem; }
+
+.mat-display-3 {
+  font-size: 3.5rem; }
+
+.mat-display-2 {
+  font-size: 2.8125rem; }
+
+.mat-display-1 {
+  font-size: 2.125rem; }
+
+.mat-headline {
+  font-size: 1.5rem; }
+
+.mat-title {
+  font-size: 1.3125rem; }
+
+.mat-subhead {
+  font-size: 1rem; }
+
+.mat-body-2 {
+  font-size: 1rem; }
+
+.mat-body-1 {
+  font-size: 1rem; }
+
+.mat-caption {
+  font-size: 0.8125rem; }
+
+.mat-button {
+  font-size: 0.8125rem; }
+
+.mat-display-2 {
+  line-height: 3rem; }
+
+.mat-display-1 {
+  line-height: 2.5rem; }
+
+.mat-headline {
+  line-height: 2rem; }
+
+.mat-subhead-2 {
+  line-height: 1.75rem; }
+
+.mat-subhead-1 {
+  line-height: 1.75rem; }
+
+.mat-body-2 {
+  line-height: 1.75rem; }
+
+.mat-body-1 {
+  line-height: 1.75rem; }
+
+html {
+  font-family: Arial, sans-serif;
+  font-size: 8px; }
+  @media (min-width: 769px) {
+    html {
+      font-family: "Spoqa Han Sans", "Roboto", Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, "돋움", Dotum, Verdana, Arial, sans-serif;
+      font-size: 18px; } }
+
+blockquote {
+  width: 700px;
+  height: auto;
+  font-size: 0.8125rem;
+  font-family: "IropkeBatangM", serif;
+  margin: 2rem 0;
+  background-color: #dbdbdb;
+  padding: 1rem 2rem; }
+
+ul, ol {
+  font-family: "Spoqa Han Sans", "Roboto", Apple SD Gothic Neo, Nanum Barun Gothic, Nanum Gothic, "돋움", Dotum, Verdana, Arial, sans-serif;
+  font-size: 0.8125rem;
+  margin: 1rem auto; }
+
+ul {
+  list-style: circle;
+  list-style-position: inside; }
+
+ol {
+  list-style: decimal;
+  list-style-position: inside; }
+
+hr {
+  margin: 1rem 0; }
+
+.mat-icon {
+  font-family: 'Material Icons' !important; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+.content-container {
+  width: 960px;
+  height: auto;
+  margin: 4rem auto; }
+  .content-container .work-title {
+    font-weight: 700;
+    text-align: center;
+    margin: 0 auto; }
+  .content-container .content-title {
+    font-size: 2.125rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 auto; }
+  .content-container .info-box {
+    width: 700px;
+    height: 36px;
+    margin: .5rem auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center; }
+    .content-container .info-box .face {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      background-clip: padding-box;
+      /* stops bg color from leaking outside the border: */
+      background-color: #4a4a4a; }
+    .content-container .info-box .name {
+      margin: 0 1rem 0 .2rem; }
+    .content-container .info-box .tag {
+      margin-left: .4rem; }
+    .content-container .info-box .time {
+      margin-right: .4rem; }
+  .content-container .content-box {
+    width: 700px;
+    height: auto;
+    margin: 6rem auto; }
+    .content-container .content-box h1 {
+      font-size: 1.5rem;
+      margin: 5rem 0 4rem 0;
+      font-weight: 700; }
+    .content-container .content-box h2 {
+      font-size: 1.3125rem;
+      margin: 4rem 0 3rem 0;
+      font-weight: 700; }
+    .content-container .content-box h3 {
+      font-size: 1rem;
+      margin: 4rem 0 2rem 0;
+      font-weight: 700; }
+    .content-container .content-box h4 {
+      font-size: 0.8125rem;
+      margin: 4rem 0 2rem 0;
+      font-weight: 700; }
+    .content-container .content-box .summary {
+      width: 100%;
+      height: 200px; }
+    .content-container .content-box .sub-title {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      font-family: "Roboto", sans-serif;
+      margin-bottom: 1.8rem; }
+    .content-container .content-box .body {
+      font-family: "IropkeBatangM", serif; }
+    .content-container .content-box img {
+      max-width: 960px; }
+
+.elseblock-title {
+  width: 100%;
+  height: 30px; }
+
+.elseblock-summary {
+  width: 100%;
+  height: 200px; }
+
+.elseblock-body {
+  width: 100%;
+  height: 200px; }
+
+.letterpress {
+  background: #999;
+  color: transparent;
+  text-shadow: 0px 1px 3px rgba(250, 250, 250, 0.95);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text; }
+
+.press-box {
+  -moz-box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px white;
+  -webkit-box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px white;
+  box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px white; }
+
+.is-bold {
+  font-weight: bold; }
+
+.is-ellipsis {
+  text-overflow: ellipsis; }
+
+/*# sourceMappingURL=edit-dialog.component.css.map */
